@@ -1,12 +1,12 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store from './redux/store';
-import ProductList from './components/ProductList';
-import CartItem from './components/CartItem';
-import Logo from './components/Logo';
-import AboutUs from './components/AboutUs';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import ProductList from "./components/ProductList";
+import CartItem from "./components/CartItem";
+import Logo from "./components/Logo";
+import AboutUs from "./components/AboutUs";
+import "./App.css";
 
 function LandingPage() {
   const navigate = useNavigate();
@@ -16,10 +16,17 @@ function LandingPage() {
       <div className="landing-left">
         <div className="landing-left-overlay">
           <Logo size={56} />
-          <h1 className="company-name">Welcome To<br />Paradise Nursery</h1>
+          <h1 className="company-name">
+            Welcome To
+            <br />
+            Paradise Nursery
+          </h1>
           <div className="tagline-divider" />
           <p className="tagline">Where Green Meets Serenity</p>
-          <button className="get-started-btn" onClick={() => navigate('/products')}>
+          <button
+            className="get-started-btn"
+            onClick={() => navigate("/products")}
+          >
             Get Started
           </button>
         </div>
@@ -35,7 +42,7 @@ function LandingPage() {
 function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename="/paradise-nursery-app">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/products" element={<ProductList />} />
